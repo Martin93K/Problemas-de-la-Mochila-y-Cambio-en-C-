@@ -1,8 +1,5 @@
 #include <iostream>
 using namespace std;
-//LÓGICA
-//Me fijo si la moneda de mayor valor es menor al cambio que tengo que dar.
-//Si eso pasa entonces la uso, sino busco la siguiente de mayor valor
 
 int monedas[5] = {1,2,5,10,50};
 
@@ -12,6 +9,8 @@ int problema_del_cambio_greedy(int* array_monedas, int cambio) {
     int cantidad_de_monedas = 0;
     for(int i = 4; i >= 0; i--) {
         int moneda_act = array_monedas[i];
+        //Me fijo si la moneda de mayor valor es menor al cambio que tengo que dar.
+        //Si eso pasa entonces la uso, sino busco la siguiente de mayor valor
         while(moneda_act <= cambio) {
             cambio -= moneda_act;
             cantidad_de_monedas++;
